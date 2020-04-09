@@ -27,4 +27,14 @@ public class User {
         map.put("password", this.password);
         return map;
     }
+
+    public boolean isValidUser() {
+        return !this.username.isEmpty() && !this.password.isEmpty();
+    }
+
+    public boolean isEqual(User user) {
+        boolean usernameEqual = user.getUsername().compareTo(this.getUsername()) == 0;
+        boolean passwordEqual = user.getPassword().compareTo(this.getPassword()) == 0;
+        return usernameEqual && passwordEqual;
+    }
 }
